@@ -1,8 +1,8 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import "./App.css";
-import Homepage from "./Pages/Homepage";
-import Productpage from "./Pages/Productpage";
+import Homepage from "./pages/Homepage";
+import Productpage from "./pages/Productpage";
 function App() {
   const openMenu = () => {
     document.querySelector(".sidebar").classList.add("open");

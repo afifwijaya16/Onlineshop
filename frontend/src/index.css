@@ -223,3 +223,6 @@ a:hover {
 .button-add-cart.primary {
   background-color: #ff8000;
 }
+.button-add-cart.primary:hover {
+  background-color: #d37619;
+}
