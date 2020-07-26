@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 
 import { useSelector, useDispatch } from "react-redux";
@@ -17,7 +17,7 @@ function Homepage(props) {
     };
   }, [])
   return (
-    loading ? <div>Loading</div> :
+    loading ? <div>Loading...</div> :
       error ? <div>{error}</div> :
         <ul className="products">
           {
