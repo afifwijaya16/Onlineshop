@@ -10,6 +10,7 @@ export default {
       rating: 4.5,
       numReviews: 10,
       description: "tes",
+      countInStock: 5,
     },
     {
       _id: "2",
@@ -21,6 +22,7 @@ export default {
       rating: 4.5,
       numReviews: 10,
       description: "tes",
+      countInStock: 3,
     },
     {
       _id: "3",
@@ -32,6 +34,7 @@ export default {
       rating: 4.5,
       numReviews: 10,
       description: "tes",
+      countInStock: 10,
     },
   ],
 };
