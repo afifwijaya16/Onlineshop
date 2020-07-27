@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import "./App.css";
 import Homepage from "./pages/Homepage";
 import Productpage from "./pages/Productpage";
+import Cartpage from "./pages/Cartpage";
 
 function App() {
   const openMenu = () => {
@@ -40,6 +41,7 @@ function App() {
         <main className="main">
           <div className="content">
             <Route path="/product/:id" component={Productpage} />
+            <Route path="/cart/:id?" component={Cartpage} />
             <Route path="/" exact={true} component={Homepage} />
           </div>
         </main>

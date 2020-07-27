@@ -10,7 +10,7 @@ export default {
       rating: 4.5,
       numReviews: 10,
       description: "tes",
-      countInStock: 5,
+      countInStock: 0,
     },
     {
       _id: "2",

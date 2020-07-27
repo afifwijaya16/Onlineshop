@@ -14,6 +14,10 @@ function Productpage(props) {
       //
     };
   }, []);
+
+  const handleAddToCart = () => {
+    props.history.push("/cart/" + props.match.params.id + "?qty=" + qty)
+  }
   return (
     <div>
       <div className="back-to-result">
@@ -24,53 +28,56 @@ function Productpage(props) {
       ) : error ? (
         <div> {error}</div>
       ) : (
-        <div className="details">
-          <div className="detail-image">
-            <img src={product.image} alt={product.id} />
-          </div>
-          <div className="detail-info">
-            <ul>
-              <li>{product.name}</li>
-              <li>
-                {product.rating} Stars ({product.numReviews} Review)
+            <div className="details">
+              <div className="detail-image">
+                <img src={product.image} alt={product.id} />
+              </div>
+              <div className="detail-info">
+                <ul>
+                  <li>{product.name}</li>
+                  <li>
+                    {product.rating} Stars ({product.numReviews} Review)
               </li>
-              <li>
-                <b>${product.price}</b>
-              </li>
-              <li>
-                Desciiption
+                  <li>
+                    <b>${product.price}</b>
+                  </li>
+                  <li>
+                    Desciiption
                 <div>{product.description}</div>
-              </li>
-            </ul>
-          </div>
-          <div className="detail-action">
-            <ul>
-              <li>Price : {product.price}</li>
-              <li>Status : {product.status}</li>
-              <li>
-                Qty :
+                  </li>
+                </ul>
+              </div>
+              <div className="detail-action">
+                <ul>
+                  <li>Price : {product.price}</li>
+                  <li>Status : {product.countInStock > 0 ? "In Stock" : "Unavailable"}</li>
+                  <li>
+                    Qty :
                 <select
-                  value={qty}
-                  onChange={(e) => {
-                    setQty(e.target.value);
-                  }}
-                >
-                  {[...Array(product.countInStock).keys()].map((x) => (
-                    <option key={x + 1} value={x + 1}>
-                      {x + 1}
-                    </option>
-                  ))}
-                </select>
-              </li>
-              <li>
-                <button className="button-add-cart primary ">
-                  Add to cart
-                </button>
-              </li>
-            </ul>
-          </div>
-        </div>
-      )}
+                      value={qty}
+                      onChange={(e) => {
+                        setQty(e.target.value);
+                      }}
+                    >
+                      {[...Array(product.countInStock).keys()].map((x) => (
+                        <option key={x + 1} value={x + 1}>
+                          {x + 1}
+                        </option>
+                      ))}
+                    </select>
+                  </li>
+                  <li>
+                    {
+                      product.countInStock > 0 &&
+                      <button onClick={handleAddToCart} className="button-add-cart primary ">
+                        Add to cart
+                      </button>
+                    }
+                  </li>
+                </ul>
+              </div>
+            </div>
+          )}
     </div>
   );
 }
