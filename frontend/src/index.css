@@ -247,8 +247,8 @@ a:hover {
 .cart-action {
   flex: 1 1 20rem;
   background-color: #f0f0f0;
-  border: .1rem #808080 solid;
-  border-radius: .5rem;
+  border: 0.1rem #808080 solid;
+  border-radius: 0.5rem;
   padding: 1rem;
 }
 
@@ -260,28 +260,27 @@ a:hover {
 .cart-list-container li {
   display: flex;
   justify-content: space-between;
-  align-items: flex-end;
-  
+
   padding-bottom: 1rem;
   margin-bottom: 1rem;
-  border-bottom: .1rem #808080 solid;
+  border-bottom: 0.1rem #c0c0c0 solid;
 }
-.cart-list-container li img{
+.cart-list-container li img {
   max-width: 10rem;
   max-height: 10rem;
 }
-.cart-list-container li:first-child{
+.cart-list-container li:first-child {
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
 }
 
-.cart-image{
+.cart-image {
   flex: 1 1;
   margin: 1rem;
 }
 
-.cart-name{
+.cart-name {
   flex: 8 1;
 }
 
